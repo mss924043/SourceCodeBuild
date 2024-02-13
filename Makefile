@@ -1,7 +1,7 @@
 # [SECTION] Locations
-Makefile_name := $(word $(words $(MAKEFILE_LIST)),$(MAKEFILE_LIST))
-Project_root := $(dir $(Makefile_name))
-MAKE_FILES += $(Makefile_name)
+Makefile := $(word $(words $(MAKEFILE_LIST)),$(MAKEFILE_LIST))
+Project_root := $(dir $(Makefile))
+MAKE_FILES += $(Makefile)
 
 # [SECTION] Include
 C_INC += -I"$(Project_root)Source"
