@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Auto generated XML Component Description for model SysCtrl
+Model version                : 1.1757
+Simulink Coder version       : Simulink Coder 9.2 (R2019b) 18-Jul-2019
+XML source code generated on : Tue Apr 04 08:43:39 2023
+Model Checksum               : 1986185202 79685821 3637059897 2993704258
+-->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2.xsd">
+    <AR-PACKAGES>
+        <AR-PACKAGE>
+            <SHORT-NAME>BwXev</SHORT-NAME>
+            <ELEMENTS>
+                <SW-BASE-TYPE UUID="f24b7291-eb5c-5235-a837-0746e63ddb6d">
+                    <SHORT-NAME>sint32</SHORT-NAME>
+                    <CATEGORY>FIXED_LENGTH</CATEGORY>
+                    <BASE-TYPE-SIZE>32</BASE-TYPE-SIZE>
+                    <BASE-TYPE-ENCODING>2C</BASE-TYPE-ENCODING>
+                    <NATIVE-DECLARATION>sint32</NATIVE-DECLARATION>
+                </SW-BASE-TYPE>
+                <APPLICATION-PRIMITIVE-DATA-TYPE UUID="a1c4a0ab-a205-5a42-3d89-7b1acdd08090">
+                    <SHORT-NAME>SysState_pwrModeStateEnumType</SHORT-NAME>
+                    <CATEGORY>VALUE</CATEGORY>
+                    <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                <COMPU-METHOD-REF DEST="COMPU-METHOD">/BwXev/COMPU_SysState_pwrModeStateEnumType</COMPU-METHOD-REF>
+                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                    </SW-DATA-DEF-PROPS>
+                </APPLICATION-PRIMITIVE-DATA-TYPE>
+                <DATA-TYPE-MAPPING-SET UUID="f75d8032-4122-527f-8551-66298afcc480">
+                    <SHORT-NAME>SysCtrlDataTypeMappingsSet</SHORT-NAME>
+                    <DATA-TYPE-MAPS>
+                        <DATA-TYPE-MAP>
+                            <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/BwXev/SysState_pwrModeStateEnumType</APPLICATION-DATA-TYPE-REF>
+                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/BwXev/DataTypes/SysState_pwrModeStateEnumType</IMPLEMENTATION-DATA-TYPE-REF>
+                        </DATA-TYPE-MAP>
+                        <DATA-TYPE-MAP>
+                            <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/BwXev/SysState_emCddStateEnumType</APPLICATION-DATA-TYPE-REF>
+                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/BwXev/DataTypes/SysState_emCddStateEnumType</IMPLEMENTATION-DATA-TYPE-REF>
+                        </DATA-TYPE-MAP>
+                        <DATA-TYPE-MAP>
+                            <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/BwXev/SysState_sysCtrlStateEnumType</APPLICATION-DATA-TYPE-REF>
+                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/BwXev/DataTypes/SysState_sysCtrlStateEnumType</IMPLEMENTATION-DATA-TYPE-REF>
+                        </DATA-TYPE-MAP>
+                    </DATA-TYPE-MAPS>
+                </DATA-TYPE-MAPPING-SET>
+                <COMPU-METHOD UUID="168e8360-1a44-5c23-abf7-efb987fd0aac">
+                    <SHORT-NAME>COMPU_SysState_pwrModeStateEnumType</SHORT-NAME>
+                    <CATEGORY>TEXTTABLE</CATEGORY>
+                    <UNIT-REF DEST="UNIT">/BwXev/NoUnit</UNIT-REF>
+                    <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                            <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                    <VT>SysState_pwrModeStateEnumType_Startup</VT>
+                                </COMPU-CONST>
+                            </COMPU-SCALE>
+                            <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                    <VT>SysState_pwrModeStateEnumType_Run</VT>
+                                </COMPU-CONST>
+                            </COMPU-SCALE>
+                            <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">2</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                    <VT>SysState_pwrModeStateEnumType_PostRun</VT>
+                                </COMPU-CONST>
+                            </COMPU-SCALE>
+                            <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">3</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">3</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                    <VT>SysState_pwrModeStateEnumType_Shutdown</VT>
+                                </COMPU-CONST>
+                            </COMPU-SCALE>
+                        </COMPU-SCALES>
+                    </COMPU-INTERNAL-TO-PHYS>
+                </COMPU-METHOD>
+                <UNIT UUID="fd658def-46a0-52ae-d2b7-768a4f279aa0">
+                    <SHORT-NAME>NoUnit</SHORT-NAME>
+                    <FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+                    <OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+                </UNIT>
+                <APPLICATION-PRIMITIVE-DATA-TYPE UUID="e552bc57-eab7-5214-dbeb-9cf75ee40c5b">
+                    <SHORT-NAME>SysState_emCddStateEnumType</SHORT-NAME>
+                    <CATEGORY>VALUE</CATEGORY>
+                    <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                <COMPU-METHOD-REF DEST="COMPU-METHOD">/BwXev/COMPU_SysState_emCddStateEnumType</COMPU-METHOD-REF>
+                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                    </SW-DATA-DEF-PROPS>
+                </APPLICATION-PRIMITIVE-DATA-TYPE>
+                <COMPU-METHOD UUID="e78d4a3f-6041-5f59-07f5-6a9fcc371009">
+                    <SHORT-NAME>COMPU_SysState_emCddStateEnumType</SHORT-NAME>
+                    <CATEGORY>TEXTTABLE</CATEGORY>
+                    <UNIT-REF DEST="UNIT">/BwXev/NoUnit</UNIT-REF>
+                    <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                            <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                    <VT>SysState_emCddStateEnumType_Startup</VT>
+                                </COMPU-CONST>
+                            </COMPU-SCALE>
+                            <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                    <VT>SysState_emCddStateEnumType_Initialize</VT>
+                                </COMPU-CONST>
+                            </COMPU-SCALE>
+                            <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">2</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                    <VT>SysState_emCddStateEnumType_Standby</VT>
+                                </COMPU-CONST>
+                            </COMPU-SCALE>
+                            <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">3</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">3</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                    <VT>SysState_emCddStateEnumType_Run</VT>
+                                </COMPU-CONST>
+                            </COMPU-SCALE>
+                            <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">4</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">4</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                    <VT>SysState_emCddStateEnumType_Fault</VT>
+                                </COMPU-CONST>
+                            </COMPU-SCALE>
+                            <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">5</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">5</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                    <VT>SysState_emCddStateEnumType_PostRun</VT>
+                                </COMPU-CONST>
+                            </COMPU-SCALE>
+                            <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">6</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">6</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                    <VT>SysState_emCddStateEnumType_Shutdown</VT>
+                                </COMPU-CONST>
+                            </COMPU-SCALE>
+                        </COMPU-SCALES>
+                    </COMPU-INTERNAL-TO-PHYS>
+                </COMPU-METHOD>
+                <COMPU-METHOD UUID="798ee7e1-d2da-55a9-2d3b-da2af45b5524">
+                    <SHORT-NAME>COMPU_Boolean</SHORT-NAME>
+                    <CATEGORY>TEXTTABLE</CATEGORY>
+                    <UNIT-REF DEST="UNIT">/BwXev/NoUnit</UNIT-REF>
+                    <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                            <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                    <VT>FALSE</VT>
+                                </COMPU-CONST>
+                            </COMPU-SCALE>
+                            <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                    <VT>TRUE</VT>
+                                </COMPU-CONST>
+                            </COMPU-SCALE>
+                        </COMPU-SCALES>
+                    </COMPU-INTERNAL-TO-PHYS>
+                </COMPU-METHOD>
+                <SW-BASE-TYPE UUID="68032540-8664-54b3-0a96-b6727bbbaf9e">
+                    <SHORT-NAME>boolean</SHORT-NAME>
+                    <CATEGORY>FIXED_LENGTH</CATEGORY>
+                    <BASE-TYPE-SIZE>8</BASE-TYPE-SIZE>
+                    <BASE-TYPE-ENCODING>BOOLEAN</BASE-TYPE-ENCODING>
+                    <NATIVE-DECLARATION>boolean</NATIVE-DECLARATION>
+                </SW-BASE-TYPE>
+                <APPLICATION-PRIMITIVE-DATA-TYPE UUID="940f72f0-8e69-5e19-7ccf-5e7e4039c788">
+                    <SHORT-NAME>SysState_sysCtrlStateEnumType</SHORT-NAME>
+                    <CATEGORY>VALUE</CATEGORY>
+                    <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                                <COMPU-METHOD-REF DEST="COMPU-METHOD">/BwXev/COMPU_SysState_sysCtrlStateEnumType</COMPU-METHOD-REF>
+                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                    </SW-DATA-DEF-PROPS>
+                </APPLICATION-PRIMITIVE-DATA-TYPE>
+                <COMPU-METHOD UUID="8e39ab86-5e71-5266-fe8f-a38b49642288">
+                    <SHORT-NAME>COMPU_SysState_sysCtrlStateEnumType</SHORT-NAME>
+                    <CATEGORY>TEXTTABLE</CATEGORY>
+                    <UNIT-REF DEST="UNIT">/BwXev/NoUnit</UNIT-REF>
+                    <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                            <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                    <VT>SysState_sysCtrlStateEnumType_Startup</VT>
+                                </COMPU-CONST>
+                            </COMPU-SCALE>
+                            <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                    <VT>SysState_sysCtrlStateEnumType_Initialize</VT>
+                                </COMPU-CONST>
+                            </COMPU-SCALE>
+                            <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">2</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                    <VT>SysState_sysCtrlStateEnumType_Run</VT>
+                                </COMPU-CONST>
+                            </COMPU-SCALE>
+                            <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">3</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">3</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                    <VT>SysState_sysCtrlStateEnumType_PostRun</VT>
+                                </COMPU-CONST>
+                            </COMPU-SCALE>
+                            <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">4</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">4</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                    <VT>SysState_sysCtrlStateEnumType_Shutdown</VT>
+                                </COMPU-CONST>
+                            </COMPU-SCALE>
+                        </COMPU-SCALES>
+                    </COMPU-INTERNAL-TO-PHYS>
+                </COMPU-METHOD>
+            </ELEMENTS>
+            <AR-PACKAGES>
+                <AR-PACKAGE>
+                    <SHORT-NAME>Components</SHORT-NAME>
+                    <ELEMENTS>
+                        <APPLICATION-SW-COMPONENT-TYPE UUID="c35b688b-1b2c-5f2c-370a-34008100177f">
+                            <SHORT-NAME>SysCtrl</SHORT-NAME>
+                            <PORTS>
+                                <R-PORT-PROTOTYPE UUID="ad640699-92f6-53b3-86bc-189321d267ae">
+                                    <SHORT-NAME>PwrModeState</SHORT-NAME>
+                                    <REQUIRED-COM-SPECS>
+                                        <NONQUEUED-RECEIVER-COM-SPEC>
+                                            <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BwXev/Interfaces/PwrModeState/PwrModeState</DATA-ELEMENT-REF>
+                                            <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                            <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                            <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                                            <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                                            <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                                            <HANDLE-TIMEOUT-TYPE>NONE</HANDLE-TIMEOUT-TYPE>
+                                            <INIT-VALUE>
+                                                <APPLICATION-VALUE-SPECIFICATION>
+                                                    <SHORT-LABEL>DefaultInitValue_SysState_pwrModeStateEnumType</SHORT-LABEL>
+                                                    <CATEGORY>VALUE</CATEGORY>
+                                                    <SW-VALUE-CONT>
+                                                        <UNIT-REF DEST="UNIT">/BwXev/NoUnit</UNIT-REF>
+                                                        <SW-VALUES-PHYS>
+                                                            <VT>SysState_pwrModeStateEnumType_Startup</VT>
+                                                        </SW-VALUES-PHYS>
+                                                    </SW-VALUE-CONT>
+                                                </APPLICATION-VALUE-SPECIFICATION>
+                                            </INIT-VALUE>
+                                        </NONQUEUED-RECEIVER-COM-SPEC>
+                                    </REQUIRED-COM-SPECS>
+                                    <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BwXev/Interfaces/PwrModeState</REQUIRED-INTERFACE-TREF>
+                                </R-PORT-PROTOTYPE>
+                                <R-PORT-PROTOTYPE UUID="0041e93e-157e-5ea4-8c81-20af02fac84f">
+                                    <SHORT-NAME>EmCddState</SHORT-NAME>
+                                    <REQUIRED-COM-SPECS>
+                                        <NONQUEUED-RECEIVER-COM-SPEC>
+                                            <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BwXev/Interfaces/EmCddState/EmCddState</DATA-ELEMENT-REF>
+                                            <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                            <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                            <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                                            <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                                            <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                                            <HANDLE-TIMEOUT-TYPE>NONE</HANDLE-TIMEOUT-TYPE>
+                                            <INIT-VALUE>
+                                                <APPLICATION-VALUE-SPECIFICATION>
+                                                    <SHORT-LABEL>DefaultInitValue_SysState_emCddStateEnumType</SHORT-LABEL>
+                                                    <CATEGORY>VALUE</CATEGORY>
+                                                    <SW-VALUE-CONT>
+                                                        <UNIT-REF DEST="UNIT">/BwXev/NoUnit</UNIT-REF>
+                                                        <SW-VALUES-PHYS>
+                                                            <VT>SysState_emCddStateEnumType_Startup</VT>
+                                                        </SW-VALUES-PHYS>
+                                                    </SW-VALUE-CONT>
+                                                </APPLICATION-VALUE-SPECIFICATION>
+                                            </INIT-VALUE>
+                                        </NONQUEUED-RECEIVER-COM-SPEC>
+                                    </REQUIRED-COM-SPECS>
+                                    <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BwXev/Interfaces/EmCddState</REQUIRED-INTERFACE-TREF>
+                                </R-PORT-PROTOTYPE>
+                                <R-PORT-PROTOTYPE UUID="3c8d15a8-cc46-56d5-36ed-f9a15aef86a6">
+                                    <SHORT-NAME>EmCddInitCmplt</SHORT-NAME>
+                                    <REQUIRED-COM-SPECS>
+                                        <NONQUEUED-RECEIVER-COM-SPEC>
+                                            <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BwXev/Interfaces/EmCddInitCmplt/EmCddInitCmplt</DATA-ELEMENT-REF>
+                                            <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                            <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                            <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                                            <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                                            <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                                            <HANDLE-TIMEOUT-TYPE>NONE</HANDLE-TIMEOUT-TYPE>
+                                            <INIT-VALUE>
+                                                <NUMERICAL-VALUE-SPECIFICATION>
+                                                    <SHORT-LABEL>DefaultInitValue_Boolean</SHORT-LABEL>
+                                                    <VALUE>0</VALUE>
+                                                </NUMERICAL-VALUE-SPECIFICATION>
+                                            </INIT-VALUE>
+                                        </NONQUEUED-RECEIVER-COM-SPEC>
+                                    </REQUIRED-COM-SPECS>
+                                    <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BwXev/Interfaces/EmCddInitCmplt</REQUIRED-INTERFACE-TREF>
+                                </R-PORT-PROTOTYPE>
+                                <P-PORT-PROTOTYPE UUID="d3a56ed0-2735-5f4d-1950-20c9b55aa4bd">
+                                    <SHORT-NAME>SysCtrlState</SHORT-NAME>
+                                    <PROVIDED-COM-SPECS>
+                                        <NONQUEUED-SENDER-COM-SPEC>
+                                            <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BwXev/Interfaces/SysCtrlState/SysCtrlState</DATA-ELEMENT-REF>
+                                            <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                            <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                            <INIT-VALUE>
+                                                <APPLICATION-VALUE-SPECIFICATION>
+                                                    <SHORT-LABEL>DefaultInitValue_SysState_sysCtrlStateEnumType</SHORT-LABEL>
+                                                    <CATEGORY>VALUE</CATEGORY>
+                                                    <SW-VALUE-CONT>
+                                                        <UNIT-REF DEST="UNIT">/BwXev/NoUnit</UNIT-REF>
+                                                        <SW-VALUES-PHYS>
+                                                            <VT>SysState_sysCtrlStateEnumType_Startup</VT>
+                                                        </SW-VALUES-PHYS>
+                                                    </SW-VALUE-CONT>
+                                                </APPLICATION-VALUE-SPECIFICATION>
+                                            </INIT-VALUE>
+                                        </NONQUEUED-SENDER-COM-SPEC>
+                                    </PROVIDED-COM-SPECS>
+                                    <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BwXev/Interfaces/SysCtrlState</PROVIDED-INTERFACE-TREF>
+                                </P-PORT-PROTOTYPE>
+                                <P-PORT-PROTOTYPE UUID="b2364bbb-27ea-5d18-4f4c-0c877bc4e1c5">
+                                    <SHORT-NAME>SysCtrlShutdownReady</SHORT-NAME>
+                                    <PROVIDED-COM-SPECS>
+                                        <NONQUEUED-SENDER-COM-SPEC>
+                                            <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BwXev/Interfaces/SysCtrlShutdownReady/SysCtrlShutdownReady</DATA-ELEMENT-REF>
+                                            <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                            <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                            <INIT-VALUE>
+                                                <NUMERICAL-VALUE-SPECIFICATION>
+                                                    <SHORT-LABEL>DefaultInitValue_Boolean</SHORT-LABEL>
+                                                    <VALUE>0</VALUE>
+                                                </NUMERICAL-VALUE-SPECIFICATION>
+                                            </INIT-VALUE>
+                                        </NONQUEUED-SENDER-COM-SPEC>
+                                    </PROVIDED-COM-SPECS>
+                                    <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BwXev/Interfaces/SysCtrlShutdownReady</PROVIDED-INTERFACE-TREF>
+                                </P-PORT-PROTOTYPE>
+                            </PORTS>
+                            <INTERNAL-BEHAVIORS>
+                                <SWC-INTERNAL-BEHAVIOR UUID="92d15eb2-2e3e-5523-653e-2e5349dce3b7">
+                                    <SHORT-NAME>SysCtrl_IB</SHORT-NAME>
+                                    <DATA-TYPE-MAPPING-REFS>
+                                        <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/BwXev/SysCtrlDataTypeMappingsSet</DATA-TYPE-MAPPING-REF>
+                                    </DATA-TYPE-MAPPING-REFS>
+                                    <EVENTS>
+                                        <TIMING-EVENT UUID="2723313c-1d1c-5456-a8f8-7fe3e15e9e52">
+                                            <SHORT-NAME>Event_SysCtrl_Task1</SHORT-NAME>
+                                            <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BwXev/Components/SysCtrl/SysCtrl_IB/SysCtrl_Task1</START-ON-EVENT-REF>
+                                            <PERIOD>0.001</PERIOD>
+                                        </TIMING-EVENT>
+                                        <INIT-EVENT UUID="641085a7-ce08-5517-e73c-86b251296e72">
+                                            <SHORT-NAME>Event_SysCtrlInit</SHORT-NAME>
+                                            <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BwXev/Components/SysCtrl/SysCtrl_IB/SysCtrl_Init</START-ON-EVENT-REF>
+                                        </INIT-EVENT>
+                                    </EVENTS>
+                                    <HANDLE-TERMINATION-AND-RESTART>NO-SUPPORT</HANDLE-TERMINATION-AND-RESTART>
+                                    <RUNNABLES>
+                                        <RUNNABLE-ENTITY UUID="23f4663f-d70d-53c4-e4b7-bb578c5527ca">
+                                            <SHORT-NAME>SysCtrl_Init</SHORT-NAME>
+                                            <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                                            <SW-ADDR-METHOD-REF DEST="SW-ADDR-METHOD">/BwXev/DataTypes/SwAddrMethods/CODE_QM_LOCAL</SW-ADDR-METHOD-REF>
+                                            <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                                            <DATA-WRITE-ACCESSS>
+                                                <VARIABLE-ACCESS UUID="e01a7c6f-4807-55ca-7c23-8d34a1eb6d02">
+                                                    <SHORT-NAME>OUT_SysCtrlState_SysCtrlState</SHORT-NAME>
+                                                    <ACCESSED-VARIABLE>
+                                                        <AUTOSAR-VARIABLE-IREF>
+                                                            <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BwXev/Components/SysCtrl/SysCtrlState</PORT-PROTOTYPE-REF>
+                                                            <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BwXev/Interfaces/SysCtrlState/SysCtrlState</TARGET-DATA-PROTOTYPE-REF>
+                                                        </AUTOSAR-VARIABLE-IREF>
+                                                    </ACCESSED-VARIABLE>
+                                                </VARIABLE-ACCESS>
+                                                <VARIABLE-ACCESS UUID="9c761da1-debb-50de-a3d5-424daa578ba6">
+                                                    <SHORT-NAME>OUT_SysCtrlShutdownReady_SysCtrlShutdownReady</SHORT-NAME>
+                                                    <ACCESSED-VARIABLE>
+                                                        <AUTOSAR-VARIABLE-IREF>
+                                                            <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BwXev/Components/SysCtrl/SysCtrlShutdownReady</PORT-PROTOTYPE-REF>
+                                                            <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BwXev/Interfaces/SysCtrlShutdownReady/SysCtrlShutdownReady</TARGET-DATA-PROTOTYPE-REF>
+                                                        </AUTOSAR-VARIABLE-IREF>
+                                                    </ACCESSED-VARIABLE>
+                                                </VARIABLE-ACCESS>
+                                            </DATA-WRITE-ACCESSS>
+                                            <SYMBOL>SysCtrl_Init</SYMBOL>
+                                        </RUNNABLE-ENTITY>
+                                        <RUNNABLE-ENTITY UUID="38c88dd7-4ebe-520f-b401-51969bbeb29e">
+                                            <SHORT-NAME>SysCtrl_Task1</SHORT-NAME>
+                                            <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                                            <SW-ADDR-METHOD-REF DEST="SW-ADDR-METHOD">/BwXev/DataTypes/SwAddrMethods/CODE_1MS_QM_LOCAL</SW-ADDR-METHOD-REF>
+                                            <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                                            <DATA-READ-ACCESSS>
+                                                <VARIABLE-ACCESS UUID="a7aa0742-3ac9-52e6-83de-0ca391fb15c7">
+                                                    <SHORT-NAME>IN_EmCddInitCmplt_EmCddInitCmplt</SHORT-NAME>
+                                                    <ACCESSED-VARIABLE>
+                                                        <AUTOSAR-VARIABLE-IREF>
+                                                            <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BwXev/Components/SysCtrl/EmCddInitCmplt</PORT-PROTOTYPE-REF>
+                                                            <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BwXev/Interfaces/EmCddInitCmplt/EmCddInitCmplt</TARGET-DATA-PROTOTYPE-REF>
+                                                        </AUTOSAR-VARIABLE-IREF>
+                                                    </ACCESSED-VARIABLE>
+                                                </VARIABLE-ACCESS>
+                                                <VARIABLE-ACCESS UUID="5aafb2fe-0ae5-5a3b-ea69-78b51d4d83c9">
+                                                    <SHORT-NAME>IN_EmCddState_EmCddState</SHORT-NAME>
+                                                    <ACCESSED-VARIABLE>
+                                                        <AUTOSAR-VARIABLE-IREF>
+                                                            <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BwXev/Components/SysCtrl/EmCddState</PORT-PROTOTYPE-REF>
+                                                            <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BwXev/Interfaces/EmCddState/EmCddState</TARGET-DATA-PROTOTYPE-REF>
+                                                        </AUTOSAR-VARIABLE-IREF>
+                                                    </ACCESSED-VARIABLE>
+                                                </VARIABLE-ACCESS>
+                                                <VARIABLE-ACCESS UUID="55e093c2-134f-50dd-d0c2-83a2122ae776">
+                                                    <SHORT-NAME>IN_PwrModeState_PwrModeState</SHORT-NAME>
+                                                    <ACCESSED-VARIABLE>
+                                                        <AUTOSAR-VARIABLE-IREF>
+                                                            <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BwXev/Components/SysCtrl/PwrModeState</PORT-PROTOTYPE-REF>
+                                                            <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BwXev/Interfaces/PwrModeState/PwrModeState</TARGET-DATA-PROTOTYPE-REF>
+                                                        </AUTOSAR-VARIABLE-IREF>
+                                                    </ACCESSED-VARIABLE>
+                                                </VARIABLE-ACCESS>
+                                            </DATA-READ-ACCESSS>
+                                            <DATA-WRITE-ACCESSS>
+                                                <VARIABLE-ACCESS UUID="261eb028-a70f-5b47-3fb1-370f3a2fecdf">
+                                                    <SHORT-NAME>OUT_SysCtrlState_SysCtrlState</SHORT-NAME>
+                                                    <ACCESSED-VARIABLE>
+                                                        <AUTOSAR-VARIABLE-IREF>
+                                                            <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BwXev/Components/SysCtrl/SysCtrlState</PORT-PROTOTYPE-REF>
+                                                            <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BwXev/Interfaces/SysCtrlState/SysCtrlState</TARGET-DATA-PROTOTYPE-REF>
+                                                        </AUTOSAR-VARIABLE-IREF>
+                                                    </ACCESSED-VARIABLE>
+                                                </VARIABLE-ACCESS>
+                                                <VARIABLE-ACCESS UUID="05ea73c0-29d7-5a5c-104c-bff890e69456">
+                                                    <SHORT-NAME>OUT_SysCtrlShutdownReady_SysCtrlShutdownReady</SHORT-NAME>
+                                                    <ACCESSED-VARIABLE>
+                                                        <AUTOSAR-VARIABLE-IREF>
+                                                            <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BwXev/Components/SysCtrl/SysCtrlShutdownReady</PORT-PROTOTYPE-REF>
+                                                            <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BwXev/Interfaces/SysCtrlShutdownReady/SysCtrlShutdownReady</TARGET-DATA-PROTOTYPE-REF>
+                                                        </AUTOSAR-VARIABLE-IREF>
+                                                    </ACCESSED-VARIABLE>
+                                                </VARIABLE-ACCESS>
+                                            </DATA-WRITE-ACCESSS>
+                                            <SYMBOL>SysCtrl_Task1</SYMBOL>
+                                        </RUNNABLE-ENTITY>
+                                    </RUNNABLES>
+                                    <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                                </SWC-INTERNAL-BEHAVIOR>
+                            </INTERNAL-BEHAVIORS>
+                        </APPLICATION-SW-COMPONENT-TYPE>
+                    </ELEMENTS>
+                    <AR-PACKAGES>
+                        <AR-PACKAGE>
+                            <SHORT-NAME>SwcImplementations</SHORT-NAME>
+                            <ELEMENTS>
+                                <SWC-IMPLEMENTATION UUID="c7ce1aef-9c7c-5791-6294-823c655e9fd2">
+                                    <SHORT-NAME>SysCtrl_Impl</SHORT-NAME>
+                                    <CODE-DESCRIPTORS>
+                                        <CODE>
+                                            <SHORT-NAME>Code</SHORT-NAME>
+                                            <ARTIFACT-DESCRIPTORS>
+                                                <AUTOSAR-ENGINEERING-OBJECT>
+                                                    <SHORT-LABEL>SysCtrl_c</SHORT-LABEL>
+                                                    <CATEGORY>SWSRC</CATEGORY>
+                                                </AUTOSAR-ENGINEERING-OBJECT>
+                                                <AUTOSAR-ENGINEERING-OBJECT>
+                                                    <SHORT-LABEL>SysStateTask1_c</SHORT-LABEL>
+                                                    <CATEGORY>SWSRC</CATEGORY>
+                                                </AUTOSAR-ENGINEERING-OBJECT>
+                                                <AUTOSAR-ENGINEERING-OBJECT>
+                                                    <SHORT-LABEL>SysCtrl_h</SHORT-LABEL>
+                                                    <CATEGORY>SWHDR</CATEGORY>
+                                                </AUTOSAR-ENGINEERING-OBJECT>
+                                                <AUTOSAR-ENGINEERING-OBJECT>
+                                                    <SHORT-LABEL>SysStateTask1_h</SHORT-LABEL>
+                                                    <CATEGORY>SWHDR</CATEGORY>
+                                                </AUTOSAR-ENGINEERING-OBJECT>
+                                                <AUTOSAR-ENGINEERING-OBJECT>
+                                                    <SHORT-LABEL>SysStateTask1_private_h</SHORT-LABEL>
+                                                    <CATEGORY>SWHDR</CATEGORY>
+                                                </AUTOSAR-ENGINEERING-OBJECT>
+                                                <AUTOSAR-ENGINEERING-OBJECT>
+                                                    <SHORT-LABEL>SysStateTask1_types_h</SHORT-LABEL>
+                                                    <CATEGORY>SWHDR</CATEGORY>
+                                                </AUTOSAR-ENGINEERING-OBJECT>
+                                                <AUTOSAR-ENGINEERING-OBJECT>
+                                                    <SHORT-LABEL>rtwtypes_h</SHORT-LABEL>
+                                                    <CATEGORY>SWHDR</CATEGORY>
+                                                </AUTOSAR-ENGINEERING-OBJECT>
+                                            </ARTIFACT-DESCRIPTORS>
+                                        </CODE>
+                                    </CODE-DESCRIPTORS>
+                                    <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+                                    <RESOURCE-CONSUMPTION>
+                                        <SHORT-NAME>RsrcCons_SysCtrl</SHORT-NAME>
+                                    </RESOURCE-CONSUMPTION>
+                                    <SW-VERSION>1.1757.1</SW-VERSION>
+                                    <USED-CODE-GENERATOR>Embedded Coder 7.3 (R2019b) 18-Jul-2019</USED-CODE-GENERATOR>
+                                    <VENDOR-ID>0</VENDOR-ID>
+                                    <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/BwXev/Components/SysCtrl/SysCtrl_IB</BEHAVIOR-REF>
+                                </SWC-IMPLEMENTATION>
+                            </ELEMENTS>
+                        </AR-PACKAGE>
+                    </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                    <SHORT-NAME>Interfaces</SHORT-NAME>
+                    <ELEMENTS>
+                        <SENDER-RECEIVER-INTERFACE UUID="6968e265-9752-5220-a572-1910cd181182">
+                            <SHORT-NAME>PwrModeState</SHORT-NAME>
+                            <IS-SERVICE>false</IS-SERVICE>
+                            <DATA-ELEMENTS>
+                                <VARIABLE-DATA-PROTOTYPE UUID="fd18bf03-5fc6-59c4-86bd-51fa107fd047">
+                                    <SHORT-NAME>PwrModeState</SHORT-NAME>
+                                    <CATEGORY>VALUE</CATEGORY>
+                                    <SW-DATA-DEF-PROPS>
+                                        <SW-DATA-DEF-PROPS-VARIANTS>
+                                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                                <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        </SW-DATA-DEF-PROPS-VARIANTS>
+                                    </SW-DATA-DEF-PROPS>
+                                    <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/BwXev/SysState_pwrModeStateEnumType</TYPE-TREF>
+                                </VARIABLE-DATA-PROTOTYPE>
+                            </DATA-ELEMENTS>
+                        </SENDER-RECEIVER-INTERFACE>
+                        <SENDER-RECEIVER-INTERFACE UUID="3e9a7b00-3abe-5317-726e-bb4d55851399">
+                            <SHORT-NAME>EmCddState</SHORT-NAME>
+                            <IS-SERVICE>false</IS-SERVICE>
+                            <DATA-ELEMENTS>
+                                <VARIABLE-DATA-PROTOTYPE UUID="07bd74e0-b001-5601-c144-8913c14e681d">
+                                    <SHORT-NAME>EmCddState</SHORT-NAME>
+                                    <CATEGORY>VALUE</CATEGORY>
+                                    <SW-DATA-DEF-PROPS>
+                                        <SW-DATA-DEF-PROPS-VARIANTS>
+                                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                                <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        </SW-DATA-DEF-PROPS-VARIANTS>
+                                    </SW-DATA-DEF-PROPS>
+                                    <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/BwXev/SysState_emCddStateEnumType</TYPE-TREF>
+                                </VARIABLE-DATA-PROTOTYPE>
+                            </DATA-ELEMENTS>
+                        </SENDER-RECEIVER-INTERFACE>
+                        <SENDER-RECEIVER-INTERFACE UUID="92349b11-20cc-5c14-53e7-708cf81e90b8">
+                            <SHORT-NAME>EmCddInitCmplt</SHORT-NAME>
+                            <IS-SERVICE>false</IS-SERVICE>
+                            <DATA-ELEMENTS>
+                                <VARIABLE-DATA-PROTOTYPE UUID="2cbebb09-47ba-5826-5e07-303bc19ee85e">
+                                    <SHORT-NAME>EmCddInitCmplt</SHORT-NAME>
+                                    <CATEGORY>VALUE</CATEGORY>
+                                    <SW-DATA-DEF-PROPS>
+                                        <SW-DATA-DEF-PROPS-VARIANTS>
+                                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                                <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        </SW-DATA-DEF-PROPS-VARIANTS>
+                                    </SW-DATA-DEF-PROPS>
+                                    <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BwXev/DataTypes/Boolean</TYPE-TREF>
+                                </VARIABLE-DATA-PROTOTYPE>
+                            </DATA-ELEMENTS>
+                        </SENDER-RECEIVER-INTERFACE>
+                        <SENDER-RECEIVER-INTERFACE UUID="c745133b-88db-5a38-c84c-e9b0e2aa344f">
+                            <SHORT-NAME>SysCtrlState</SHORT-NAME>
+                            <IS-SERVICE>false</IS-SERVICE>
+                            <DATA-ELEMENTS>
+                                <VARIABLE-DATA-PROTOTYPE UUID="7f400a6d-d71d-5b84-b48f-7a8fe3344f6d">
+                                    <SHORT-NAME>SysCtrlState</SHORT-NAME>
+                                    <CATEGORY>VALUE</CATEGORY>
+                                    <SW-DATA-DEF-PROPS>
+                                        <SW-DATA-DEF-PROPS-VARIANTS>
+                                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                                <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        </SW-DATA-DEF-PROPS-VARIANTS>
+                                    </SW-DATA-DEF-PROPS>
+                                    <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/BwXev/SysState_sysCtrlStateEnumType</TYPE-TREF>
+                                </VARIABLE-DATA-PROTOTYPE>
+                            </DATA-ELEMENTS>
+                        </SENDER-RECEIVER-INTERFACE>
+                        <SENDER-RECEIVER-INTERFACE UUID="b7ef0ceb-d3a4-5f17-cb2b-962a8b94b766">
+                            <SHORT-NAME>SysCtrlShutdownReady</SHORT-NAME>
+                            <IS-SERVICE>false</IS-SERVICE>
+                            <DATA-ELEMENTS>
+                                <VARIABLE-DATA-PROTOTYPE UUID="816203a2-a88e-5e8f-5c87-02dc1cae6745">
+                                    <SHORT-NAME>SysCtrlShutdownReady</SHORT-NAME>
+                                    <CATEGORY>VALUE</CATEGORY>
+                                    <SW-DATA-DEF-PROPS>
+                                        <SW-DATA-DEF-PROPS-VARIANTS>
+                                            <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                                <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                            </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        </SW-DATA-DEF-PROPS-VARIANTS>
+                                    </SW-DATA-DEF-PROPS>
+                                    <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BwXev/DataTypes/Boolean</TYPE-TREF>
+                                </VARIABLE-DATA-PROTOTYPE>
+                            </DATA-ELEMENTS>
+                        </SENDER-RECEIVER-INTERFACE>
+                    </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                    <SHORT-NAME>DataTypes</SHORT-NAME>
+                    <ELEMENTS>
+                        <IMPLEMENTATION-DATA-TYPE UUID="507066b1-2aec-5892-3eaa-a6cc56c1d267">
+                            <SHORT-NAME>SysState_pwrModeStateEnumType</SHORT-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <BASE-TYPE-REF DEST="SW-BASE-TYPE">/BwXev/sint32</BASE-TYPE-REF>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE UUID="d9de7067-76be-5611-b492-268b9393a452">
+                            <SHORT-NAME>SysState_emCddStateEnumType</SHORT-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <BASE-TYPE-REF DEST="SW-BASE-TYPE">/BwXev/sint32</BASE-TYPE-REF>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE UUID="95a03a62-17e1-566d-e7ee-03316efd10b9">
+                            <SHORT-NAME>Boolean</SHORT-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <BASE-TYPE-REF DEST="SW-BASE-TYPE">/BwXev/boolean</BASE-TYPE-REF>
+                                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/BwXev/COMPU_Boolean</COMPU-METHOD-REF>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE UUID="f019a455-53a8-57f7-bffa-32c2c392c6b0">
+                            <SHORT-NAME>SysState_sysCtrlStateEnumType</SHORT-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <BASE-TYPE-REF DEST="SW-BASE-TYPE">/BwXev/sint32</BASE-TYPE-REF>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                    </ELEMENTS>
+                    <AR-PACKAGES>
+                        <AR-PACKAGE>
+                            <SHORT-NAME>SwAddrMethods</SHORT-NAME>
+                            <ELEMENTS>
+                                <SW-ADDR-METHOD UUID="175245d5-a1ff-5bae-a278-e165abcb4a11">
+                                    <SHORT-NAME>CODE</SHORT-NAME>
+                                    <SECTION-TYPE>CODE</SECTION-TYPE>
+                                </SW-ADDR-METHOD>
+                                <SW-ADDR-METHOD UUID="b716c488-e9bc-5290-fd72-3ec42598cce3">
+                                    <SHORT-NAME>CONST</SHORT-NAME>
+                                    <SECTION-TYPE>CONST</SECTION-TYPE>
+                                </SW-ADDR-METHOD>
+                                <SW-ADDR-METHOD UUID="240a6605-8122-50bb-9c8c-4b46034d7967">
+                                    <SHORT-NAME>VAR</SHORT-NAME>
+                                    <SECTION-TYPE>VAR</SECTION-TYPE>
+                                </SW-ADDR-METHOD>
+                                <SW-ADDR-METHOD UUID="e921521b-eed0-53fd-baf0-048e3d03b0c1">
+                                    <SHORT-NAME>EMCAT1_CODE_FAST_QM_LOCAL</SHORT-NAME>
+                                    <SECTION-TYPE>CODE</SECTION-TYPE>
+                                </SW-ADDR-METHOD>
+                                <SW-ADDR-METHOD UUID="b4dfd7e7-a4b9-55c4-fcfe-e11174fbc00b">
+                                    <SHORT-NAME>CODE_1MS_QM_LOCAL</SHORT-NAME>
+                                    <MEMORY-ALLOCATION-KEYWORD-POLICY>ADDR-METHOD-SHORT-NAME</MEMORY-ALLOCATION-KEYWORD-POLICY>
+                                    <SECTION-TYPE>CODE</SECTION-TYPE>
+                                </SW-ADDR-METHOD>
+                                <SW-ADDR-METHOD UUID="74be4f3c-bcae-54f0-4588-4f5f2e5ff41e">
+                                    <SHORT-NAME>CODE_10MS_QM_LOCAL</SHORT-NAME>
+                                    <SECTION-TYPE>CODE</SECTION-TYPE>
+                                </SW-ADDR-METHOD>
+                                <SW-ADDR-METHOD UUID="6be66b7d-a452-5124-2950-3edc93ecd85e">
+                                    <SHORT-NAME>CODE_QM_LOCAL</SHORT-NAME>
+                                    <MEMORY-ALLOCATION-KEYWORD-POLICY>ADDR-METHOD-SHORT-NAME</MEMORY-ALLOCATION-KEYWORD-POLICY>
+                                    <SECTION-TYPE>CODE</SECTION-TYPE>
+                                </SW-ADDR-METHOD>
+                            </ELEMENTS>
+                        </AR-PACKAGE>
+                    </AR-PACKAGES>
+                </AR-PACKAGE>
+            </AR-PACKAGES>
+        </AR-PACKAGE>
+    </AR-PACKAGES>
+</AUTOSAR>
