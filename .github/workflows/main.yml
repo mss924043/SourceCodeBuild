@@ -25,7 +25,7 @@ jobs:
 
       - name: Build with GNU Make
         run: |
-          make -f Makefile_name
+          make -f SysCtrl/Makefile
 
       - name: Publish Artifacts
         uses: actions/upload-artifact@v2
