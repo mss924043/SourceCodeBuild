@@ -6,6 +6,7 @@ MAKE_FILES += $(Makefile_name)
 # [SECTION] Include
 C_INC += -I"$(Project_root)Source"
 C_INC += -I"$(Project_root)Other"
+C_INC += -I"$(Project_root)Include"  # Include the Include directory
 
 # [SECTION] Sources
 VPATH += "$(Project_root)Source"
