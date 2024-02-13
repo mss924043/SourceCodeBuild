@@ -1,34 +1,24 @@
-name: Build and Publish Artifacts
+name: Build Artifacts
 
 on:
   push:
     branches:
-      - '*'  # Adjust branch name as needed
+      - main
   pull_request:
     branches:
-      - '*'  # Adjust branch name as needed
+      - main
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Setup GCC
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-      - name: Install GCC
-        run: sudo apt-get install build-essential
+    - name: Set up build environment
+      run: sudo apt-get update && sudo apt-get install -y build-essential
 
-      - name: Build with GNU Make
-        run: |
-          make -f SysCtrl/Makefile
-
-      - name: Publish Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: SysCtrlArtifacts
-          path: build  # Adjust path if necessary
+    - name: Build artifacts
+      run: cd SysCtrl && make build_artifacts
