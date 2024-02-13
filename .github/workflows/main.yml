@@ -28,5 +28,5 @@ jobs:
     - name: Publish artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: my-artifacts
+        name: SysCtrl-artifacts
         path: SysCtrl/build
