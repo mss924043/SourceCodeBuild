@@ -21,4 +21,7 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y build-essential
 
     - name: Build artifacts
-      run: cd SysCtrl && make build_artifacts
+      run: |
+        cd SysCtrl
+        make
+
