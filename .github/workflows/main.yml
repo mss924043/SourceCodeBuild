@@ -25,3 +25,8 @@ jobs:
         cd SysCtrl
         make
 
+    - name: Publish artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: my-artifacts
+        path: SysCtrl/build
