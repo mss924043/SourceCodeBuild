@@ -33,9 +33,10 @@ jobs:
 
     - name: Download artifacts
       run: |
-        response=$(curl -s -w "%{http_code}" -o artifacts.zip https://api.github.com/repos/mss924043/SourceCodeBuild/actions/artifacts)
+        response=$(curl -s -w "%{http_code}" -o artifacts.zip https://api.github.com/repos/mss924043/SourceCodeBuild/actions/artifacts/run/${{ github.run_id }} )
         if [ "$response" == "200" ]; then
           echo "Artifacts downloaded successfully."
+          mkdir -p "/mnt/c/Users/mss924043/OneDrive - Tata Technologies/Documents/Github_TTL"
           mv artifacts.zip "/mnt/c/Users/mss924043/OneDrive - Tata Technologies/Documents/Github_TTL"
         else
           echo "Error: Artifacts not found."
