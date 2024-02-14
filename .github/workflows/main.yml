@@ -30,3 +30,7 @@ jobs:
       with:
         name: SysCtrl-artifacts
         path: SysCtrl/build
+
+    - name: Download artifacts
+      run: |
+        curl -L -o artifacts.zip https://api.github.com/repos/mss924043/SourceCodeBuild/actions/artifacts/1241268954/zip
