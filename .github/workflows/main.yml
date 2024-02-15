@@ -33,8 +33,8 @@ jobs:
 
     - name: Store artifacts in master branch
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.email "mohitkumar.sahu@tatatechnologies.com"
+        git config --local user.name "mss924043"
         git checkout master
         mkdir artifacts
         cp -r SysCtrl/build/* artifacts/
