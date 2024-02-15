@@ -30,3 +30,14 @@ jobs:
       with:
         name: SysCtrl-artifacts
         path: SysCtrl/build
+
+    - name: Store artifacts in master branch
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git checkout master
+        mkdir artifacts
+        cp -r SysCtrl/build/* artifacts/
+        git add .
+        git commit -m "Publish artifacts"
+        git push
