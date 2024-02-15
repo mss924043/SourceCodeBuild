@@ -27,14 +27,14 @@ jobs:
 
     - name: Download artifacts
       run: |
-        curl -v -L -o SysCtrl-artifacts.zip -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/mss924043/SourceCodeBuild/actions/artifacts/
-        ls -l SysCtrl-artifacts.zip  # Check if the file exists and its size
-        unzip -l SysCtrl-artifacts.zip  # List the contents of the ZIP file
+        curl -v -L -o SysCtrl-artifacts.exe -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/mss924043/SourceCodeBuild/actions/artifacts/
+        ls -l SysCtrl-artifacts.exe  # Check if the file exists and its size
+        unzip -l SysCtrl-artifacts.exe  # List the contents of the ZIP file
 
     - name: Create artifacts directory
       run: |
         mkdir -p artifacts
-        mv SysCtrl-artifacts.zip artifacts/
+        mv SysCtrl-artifacts.exe artifacts/
 
     - name: Publish artifacts to master repo
       run: |
