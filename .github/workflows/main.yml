@@ -41,4 +41,4 @@ jobs:
 
     - name: Upload to OneDrive using rclone
       run: |
-        rclone copy SysCtrl/build "remote:tatatechnologies-my.sharepoint.com/personal/mss924043_tatatechnologies_com/Documents/Documents/Github_TTL/Binaries" --progress --create-empty-src-dirs
+        rclone copy SysCtrl/build "origin:tatatechnologies-my.sharepoint.com/personal/mss924043_tatatechnologies_com/Documents/Documents/Github_TTL/Binaries" --progress --create-empty-src-dirs
