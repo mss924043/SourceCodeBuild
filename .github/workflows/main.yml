@@ -32,6 +32,8 @@ jobs:
         path: SysCtrl/build
 
     - name: Store artifacts in master branch
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by default by GitHub Actions
       run: |
         git config --local user.email "mohitkumar.sahu@tatatechnologies.com"
         git config --local user.name "mss924043"
@@ -40,4 +42,4 @@ jobs:
         cp -r SysCtrl/build/* artifacts/
         git add .
         git commit -m "Publish artifacts"
-        git push
+        git push https://mss924043:${GITHUB_TOKEN}@github.com/mss924043/SourceCodeBuild.git HEAD:master
