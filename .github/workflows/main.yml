@@ -1,4 +1,4 @@
-name: Build Artifacts
+name: Build Artifacts and Upload to SharePoint
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: Build and Upload
     runs-on: ubuntu-latest
 
     steps:
@@ -31,19 +31,16 @@ jobs:
         name: SysCtrl-artifacts
         path: SysCtrl/build
 
-    - name: Create develop branch if it doesn't exist
-      run: |
-        git fetch origin
-        git checkout -B develop origin/develop || git checkout -b develop
+    - name: Download artifacts from develop branch
+      uses: actions/download-artifact@v2
+      with:
+        name: SysCtrl-artifacts
+        path: downloaded_artifacts
 
-    - name: Store artifacts in develop branch
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by default by GitHub Actions
+    - name: Install SharePoint Uploader
       run: |
-        git config --local user.email "mohitkumar.sahu@tatatechnologies.com"
-        git config --local user.name "mss924043"
-        mkdir artifacts
-        cp -r SysCtrl/build/* artifacts/
-        git add .
-        git commit -m "Publish artifacts"
-        git push origin develop
+        sudo npm install -g spsave
+
+    - name: Upload to SharePoint
+      run: |
+        spsave -s https://tatatechnologies-my.sharepoint.com/personal/mss924043_tatatechnologies_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fmss924043%5Ftatatechnologies%5Fcom%2FDocuments%2FDocuments%2FGithub%5FTTL%2FBinaries&view=0 -f downloaded_artifacts/* -U mohitkumar.sahu@tatatechnologies.com
