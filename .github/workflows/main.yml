@@ -43,4 +43,7 @@ jobs:
 
     - name: Upload to SharePoint
       run: |
-        spsave -s https://tatatechnologies-my.sharepoint.com/personal/mss924043_tatatechnologies_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fmss924043%5Ftatatechnologies%5Fcom%2FDocuments%2FDocuments%2FGithub%5FTTL%2FBinaries&view=0 -f downloaded_artifacts/* -U mohitkumar.sahu@tatatechnologies.com
+        # Navigate to the downloaded_artifacts directory
+        cd downloaded_artifacts
+        # Use wildcard (*) to select all files in the directory
+        spsave -s https://tatatechnologies-my.sharepoint.com/personal/mss924043_tatatechnologies_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fmss924043%5Ftatatechnologies%5Fcom%2FDocuments%2FDocuments%2FGithub%5FTTL%2FBinaries&view=0 -f * -U mohitkumar.sahu@tatatechnologies.com
