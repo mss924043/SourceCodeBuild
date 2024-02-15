@@ -42,7 +42,9 @@ jobs:
       run: |
         git config --local user.email "mohitkumar.sahu@tatatechnologies.com"
         git config --local user.name "mss924043"
+        if [ ! -d "artifacts" ]; then
         mkdir artifacts
+        fi
         cp -r SysCtrl/build/* artifacts/
         git add .
         git commit -m "Publish artifacts"
