@@ -9,7 +9,7 @@ on:
       - '*'
 
 jobs:
-  build:
+  build_and_upload:
     name: Build and Upload
     runs-on: ubuntu-latest
 
@@ -31,19 +31,10 @@ jobs:
         name: SysCtrl-artifacts
         path: SysCtrl/build
 
-    - name: Download artifacts from develop branch
-      uses: actions/download-artifact@v2
-      with:
-        name: SysCtrl-artifacts
-        path: downloaded_artifacts
-
-    - name: Install SharePoint Uploader
+    - name: Install rclone
       run: |
-        sudo npm install -g spsave
+        curl https://rclone.org/install.sh | sudo bash
 
-    - name: Upload to SharePoint
+    - name: Upload to OneDrive using rclone
       run: |
-        # Navigate to the downloaded_artifacts directory
-        cd downloaded_artifacts
-        # Use wildcard (*) to select all files in the directory
-        spsave -s https://tatatechnologies-my.sharepoint.com/personal/mss924043_tatatechnologies_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fmss924043%5Ftatatechnologies%5Fcom%2FDocuments%2FDocuments%2FGithub%5FTTL%2FBinaries&view=0 -f * -U mohitkumar.sahu@tatatechnologies.com
+        rclone copy SysCtrl/build "onedrive:tatatechnologies-my.sharepoint.com/personal/mss924043_tatatechnologies_com/Documents/Documents/Github_TTL/Binaries" --progress --create-empty-src-dirs
