@@ -40,7 +40,7 @@ jobs:
       with:
         host: ${{ secrets.LOCAL_MACHINE_HOST }}
         username: ${{ secrets.LOCAL_MACHINE_USERNAME }}
-        password: ${{ secrets.LOCAL_MACHINE_PASSWORD }}
+        key: ${{ secrets.LOCAL_MACHINE_SSH_KEY }}
         port: ${{ secrets.LOCAL_MACHINE_PORT }}
         source: SysCtrl-artifacts
         target: D:\Binaries
