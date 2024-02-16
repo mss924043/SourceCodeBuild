@@ -1,12 +1,9 @@
-name: Build Artifacts
+name: Build Artifacts and Push to Local Machine
 
 on:
   push:
     branches:
-      - '*'
-  pull_request:
-    branches:
-      - '*'
+      - develop
 
 jobs:
   build:
@@ -32,12 +29,18 @@ jobs:
         path: SysCtrl/build
 
     - name: Download artifacts
-      run: |
-        response=$(curl -s -w "%{http_code}" -o artifacts.zip https://api.github.com/repos/mss924043/SourceCodeBuild/actions/artifacts/run/${{ github.run_id }} )
-        if [ "$response" == "200" ]; then
-          echo "Artifacts downloaded successfully."
-          mkdir -p "/mnt/d/Binaries"  # Modified local path
-          mv artifacts.zip "/mnt/d/Binaries"  # Modified local path
-        else
-          echo "Error: Artifacts not found."
-        fi
+      uses: actions/download-artifact@v2
+      with:
+        name: SysCtrl-artifacts
+        path: SysCtrl-artifacts
+
+    - name: Push artifacts to local machine
+      if: github.ref == 'refs/heads/develop'  # Only push from develop branch
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.LOCAL_MACHINE_HOST }}
+        username: ${{ secrets.LOCAL_MACHINE_USERNAME }}
+        password: ${{ secrets.LOCAL_MACHINE_PASSWORD }}
+        port: ${{ secrets.LOCAL_MACHINE_PORT }}
+        source: SysCtrl-artifacts
+        target: D:\Binaries
