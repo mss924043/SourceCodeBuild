@@ -1,4 +1,4 @@
-name: Build Artifacts and Upload to SharePoint
+name: Build Artifacts
 
 on:
   push:
@@ -9,8 +9,8 @@ on:
       - '*'
 
 jobs:
-  build_and_upload:
-    name: Build and Upload
+  build:
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
@@ -31,23 +31,13 @@ jobs:
         name: SysCtrl-artifacts
         path: SysCtrl/build
 
-    - name: Install rclone
+    - name: Download artifacts
       run: |
-        curl https://rclone.org/install.sh | sudo bash
-
-    - name: Configure rclone with OneDrive
-      run: |
-        echo "$RCLONE_CONFIG" > ~/.config/rclone/rclone.conf
-      env:
-        RCLONE_CONFIG: |
-          [onedrive]
-          type = onedrive
-          token = {"access_token":"YOUR_ACCESS_TOKEN","expiry":"2024-02-15T18:49:12.517785983Z"}
-          drive_id = YOUR_DRIVE_ID
-          drive_type = personal
-        ONE_DRIVE_ACCOUNT: ${{ secrets.ONE_DRIVE_ACCOUNT }}
-        ONE_DRIVE_PASSWORD: ${{ secrets.ONE_DRIVE_PASSWORD }}
-
-    - name: Upload to OneDrive using rclone
-      run: |
-        rclone copy SysCtrl/build "onedrive:tatatechnologies-my.sharepoint.com/personal/mss924043_tatatechnologies_com/Documents/Documents/Github_TTL/Binaries" --progress --create-empty-src-dirs --config ~/.config/rclone/rclone.conf
+        response=$(curl -s -w "%{http_code}" -o artifacts.zip https://api.github.com/repos/mss924043/SourceCodeBuild/actions/artifacts/run/${{ github.run_id }} )
+        if [ "$response" == "200" ]; then
+          echo "Artifacts downloaded successfully."
+          mkdir -p "/mnt/d/Binaries"  # Modified local path
+          mv artifacts.zip "/mnt/d/Binaries"  # Modified local path
+        else
+          echo "Error: Artifacts not found."
+        fi
