@@ -37,8 +37,17 @@ jobs:
 
     - name: Configure rclone with OneDrive
       run: |
-        rclone config create onedrive onedrive drive onedrive.appfolder=false
+        echo "$RCLONE_CONFIG" > ~/.config/rclone/rclone.conf
+      env:
+        RCLONE_CONFIG: |
+          [onedrive]
+          type = onedrive
+          token = {"access_token":"YOUR_ACCESS_TOKEN","expiry":"2024-02-15T18:49:12.517785983Z"}
+          drive_id = YOUR_DRIVE_ID
+          drive_type = personal
+        ONE_DRIVE_ACCOUNT: ${{ secrets.ONE_DRIVE_ACCOUNT }}
+        ONE_DRIVE_PASSWORD: ${{ secrets.ONE_DRIVE_PASSWORD }}
 
     - name: Upload to OneDrive using rclone
       run: |
-        rclone copy SysCtrl/build "origin:tatatechnologies-my.sharepoint.com/personal/mss924043_tatatechnologies_com/Documents/Documents/Github_TTL/Binaries" --progress --create-empty-src-dirs
+        rclone copy SysCtrl/build "onedrive:tatatechnologies-my.sharepoint.com/personal/mss924043_tatatechnologies_com/Documents/Documents/Github_TTL/Binaries" --progress --create-empty-src-dirs --config ~/.config/rclone/rclone.conf
