@@ -32,7 +32,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: SysCtrl-artifacts
-          path: SysCtrl-artifacts/D:\Binaries
+          path: SysCtrl-artifacts
 
       - name: Test SSH connection
         run: ssh -o StrictHostKeyChecking=no -i ${{ secrets.LOCAL_MACHINE_SSH_KEY }} ${{ secrets.LOCAL_MACHINE_USERNAME }}@${{ secrets.LOCAL_MACHINE_HOST }} -p ${{ secrets.LOCAL_MACHINE_PORT }} echo "SSH connection successful"
